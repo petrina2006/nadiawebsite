@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul id="project-list">
+              <!-- Project items will be dynamically added here -->
+            </ul>
+          </section>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to My Portfolio</h2>
+        <p>A showcase of high-quality designs</p>
+        <p>This is the homepage of my portfolio website.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Petrina Kadzo.</p>
+        <p>I am a professional website designer with experience in html, css, and JavaScript.</p>
+        <p>I can create different websites which has enable me to earn my living through this.</p>
+        <p>I also engage myself with I.C.T activities such as doing online courses like digital marketing</p>
+        <p>For those who would like to accept this website I expect maximum co-operation from all so as to achieve all our goals</p>
+    </section>
+
+   
+    <div id="work-samples">
+      <!-- Your work samples will be dynamically loaded here based on the filter selection -->
+    </div>
+    
+    <label for="filter">Filter by Work Type:</label>
+    <select id="filter">
+      <option value="projects">Projects</option>
+      <option value="case_studies">Case Studies</option>
+    </select>
+    
+    <div id="work-samples">
+      <!-- Your work samples will be dynamically loaded here based on the filter selection -->
+    </div>
+
+        <script>
+      document.getElementById('filter').addEventListener('change', function() {
+        var selectedValue = this.value;
+        // Call a function to filter work samples based on the selected value
+        filterWorkSamples(selectedValue);
+      });
+    
+      function filterWorkSamples(value) {
+        var workSamples = document.querySelectorAll('.work-sample');
+        workSamples.forEach(function(sample) {
+          if (value === 'projects' && sample.classList.contains('project')) {
+            sample.style.display = 'block';
+          } else if (value === 'case_studies' && sample.classList.contains('case-study')) {
+            sample.style.display = 'block';
+          } else {
+            sample.style.display = 'none';
+          }
+        });
+      }
+    </script>
+    
+    <div id="contact-info">
+        <h2>Contact Information</h2>
+        <div class="channel">
+            <span>Email:</span>
+            <a href="mailto:example@example.com">petrinakadzo17@gmail.com</a>
+        </div>
+        <div class="channel">
+            <span>Phone:</span>
+            <span>+254 757428889</span>
+        </div>
+        <div class="channel">
+            <span>Address:</span>
+            <span>80201 Garsen,Tana River,Kenya</span>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <div class="cta-container">
+          <h2>Take the Next Step</h2>
+          <p>Download my resume, view my latest projects, and stay connected!</p>
+          <div class="cta-buttons">
+            <button id="download-resume-btn">Download Resume</button>
+            <button id="view-projects-btn">View Projects</button>
+            <button id="follow-social-btn">Follow Me</button>
+          </div>
+        </div>
+      </section>
+      <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="container">
+        <div class="portfolio-item">
+          <img src="image1.jpg" alt="Design 1">
+          <img src="image2.jpg" alt="Design 2">
+          <img src="image3.jpg" alt="Design 3">
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.behance.net/yourprofile" target="_blank" rel="noopener noreferrer"><img src="behance.png" alt="Behance"></a>
+          </div> 
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
